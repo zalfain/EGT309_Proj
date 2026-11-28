@@ -1,0 +1,25 @@
+# Dataset settings
+data:
+  path: "data/proj_machine_readings.csv"
+  target_column: "maintenance_required"
+
+# Data preprocessing settings
+preprocessing:
+  imputation_strategy: "median"
+  negative_vibration_as_missing: true
+
+  timestamp_features:
+    - hour
+    - day_of_week
+    - month
+
+  drop_columns:
+    - machine_status
+    - anomaly_flag
+    - failure_type
+    - downtime_risk
+    - predicted_remaining_life
+
+# General project settings
+project:
+  random_state: 42
